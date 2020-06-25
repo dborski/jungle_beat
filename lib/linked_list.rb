@@ -14,5 +14,8 @@ class LinkedList
     return 0 if !@head
     return 1 if @head 
   end
-  
+
+  def to_string
+    @head.data.to_s
+  end
 end

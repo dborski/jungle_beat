@@ -30,4 +30,10 @@ class LinkedListTest < Minitest::Test
 
     assert_equal 1, @list.count
   end
+
+  def test_can_generate_string_from_elements
+    @list.append("doop")
+
+    assert_equal "doop", @list.to_string
+  end
 end 
