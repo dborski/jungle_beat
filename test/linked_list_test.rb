@@ -22,4 +22,12 @@ class LinkedListTest < Minitest::Test
     assert_instance_of Node, @list.head
     assert_equal nil, @list.head.next_node
   end
+
+  def test_can_count_elements_in_list
+    assert_equal 0, @list.count
+
+    @list.append("random")
+
+    assert_equal 1, @list.count
+  end
 end 
