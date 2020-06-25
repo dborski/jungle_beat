@@ -16,14 +16,24 @@ class LinkedListTest < Minitest::Test
     assert_equal nil, @list.head
   end
 
-  def test_append_creates_node_and_adds_to_head
+  def test_append_creates_node_and_adds_to_head_if_head_is_nil
     
     assert_equal "doop", @list.append("doop")
     assert_instance_of Node, @list.head
     assert_equal nil, @list.head.next_node
   end
 
+  def test_append_creates_node_and_adds_to_next_node_if_already_head
+
+    @list.append("doop")
+    
+    assert_equal "deep", @list.append("deep")
+    assert_instance_of Node, @list.head.next_node
+    assert_equal nil, @list.head.next_node.next_node
+  end
+
   def test_can_count_elements_in_list
+    skip
     assert_equal 0, @list.count
 
     @list.append("random")
@@ -32,6 +42,7 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_can_generate_string_from_elements
+    skip
     @list.append("doop")
 
     assert_equal "doop", @list.to_string

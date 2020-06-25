@@ -6,7 +6,11 @@ class LinkedList
   end
 
   def append(data)
-    @head = Node.new(data) if !@head
+    if !@head
+      @head = Node.new(data)
+    else 
+      @head.add_next_node(data)
+    end 
     data
   end
 
