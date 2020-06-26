@@ -17,6 +17,16 @@ class LinkedList
     end 
   end
 
+  def whole_list
+    elements = []
+    current_node = @head
+    while current_node.next_node
+      elements << current_node
+      current_node = current_node.next_node
+    end 
+    elements << current_node
+  end
+
   def count
     return 0 if !@head
     # return 2 if @head.next_node

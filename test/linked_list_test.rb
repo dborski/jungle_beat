@@ -26,10 +26,18 @@ class LinkedListTest < Minitest::Test
   def test_append_creates_node_and_adds_to_next_node_if_already_head
     @list.append("doop")
     @list.append("deep")
-    
+
     assert_instance_of Node, @list.head.next_node
     assert_equal nil, @list.head.next_node.next_node
   end
+
+  def test_linked_list_in_array
+    @list.append("doop")
+    @list.append("deep")
+
+    assert_instance_of Node, @list.whole_list.first
+    assert_instance_of Node, @list.whole_list.last
+  end 
 
   def test_can_count_elements_in_list
     skip
