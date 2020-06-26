@@ -18,10 +18,5 @@ class NodeTest < Minitest::Test
   def test_next_node_is_nil
     assert_equal nil, @node.next_node
   end
-
-  def test_can_add_new_node
-    @node.add_next_node("deep")
-    assert_instance_of Node, @node.next_node
-  end
 end 
 
