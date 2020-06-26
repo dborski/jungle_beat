@@ -111,5 +111,6 @@ class LinkedListTest < Minitest::Test
     assert_equal "shi", @list.find(2, 1)
     assert_equal "woo shi shu", @list.find(1, 3)
     assert_equal "blop tukow", @list.find(4, 2)
+    assert_equal "deep woo shi shu blop tukow", @list.find(0, 6)
   end
 end 
