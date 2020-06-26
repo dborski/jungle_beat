@@ -99,4 +99,15 @@ class LinkedListTest < Minitest::Test
     assert_equal 5, @list.count
     assert_equal "bop doop hello bebop meep", @list.to_string
   end
+
+  def test_can_find_one_or_more_values
+    @list.append("deep")
+    @list.append("woo")
+    @list.append("shi")
+    @list.append("shu")
+    @list.append("blop")
+
+    assert_equal "shi", @list.find(2, 1)
+    assert_equal "woo shi shu", @list.find(1, 3)
+  end
 end 
