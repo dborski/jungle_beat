@@ -9,14 +9,18 @@ class LinkedList
     if !@head
       @head = Node.new(data)
     else 
-      @head.add_next_node(data)
+      current_node = @head
+      while current_node.next_node
+        current_node = current_node.next_node
+      end 
+      current_node.add_next_node(data)
     end 
-    data
   end
 
   def count
     return 0 if !@head
-    return 1 if @head 
+    # return 2 if @head.next_node
+    # return 1 if @head 
   end
 
   def to_string
