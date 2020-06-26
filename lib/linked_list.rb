@@ -13,9 +13,17 @@ class LinkedList
       while current_node.next_node
         current_node = current_node.next_node
       end 
-      current_node.add_next_node(data)
+      current_node.next_node = Node.new(data)
     end 
   end
+
+  def prepend(data)
+    current_node = @head
+    new_node = Node.new(data)
+    
+    @head = new_node
+    new_node.next_node = current_node
+  end 
 
   def whole_list
     elements = []

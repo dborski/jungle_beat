@@ -57,4 +57,13 @@ class LinkedListTest < Minitest::Test
 
     assert_equal "doop hello", @list.to_string
   end
+
+  def test_can_prepend_list
+    @list.append("doop")
+    @list.append("hello")
+    @list.prepend("bop")
+
+    assert_equal "bop", @list.head.data
+    assert_equal 3, @list.count
+  end
 end 
