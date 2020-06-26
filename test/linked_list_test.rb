@@ -65,5 +65,6 @@ class LinkedListTest < Minitest::Test
 
     assert_equal "bop", @list.head.data
     assert_equal 3, @list.count
+    assert_equal "bop doop hello", @list.to_string
   end
 end 
