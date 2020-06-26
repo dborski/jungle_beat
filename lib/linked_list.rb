@@ -13,7 +13,7 @@ class LinkedList
       while current_node.next_node
         current_node = current_node.next_node
       end 
-      current_node.next_node = Node.new(data)
+      current_node.add_next_node(data)
     end 
   end
 
