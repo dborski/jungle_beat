@@ -66,7 +66,7 @@ class LinkedList
   def find(find_index, count)
     nodes = []
     whole_list.each_with_index do |node, index|
-      nodes << node if find_index == index || (index > find_index && (index < (count + 1)))
+      nodes << node if find_index == index || (index > find_index && (index < (find_index + count)))
     end
     nodes.map { |node| node.data.to_s }.join(" ") 
   end 
