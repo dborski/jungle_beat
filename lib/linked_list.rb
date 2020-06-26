@@ -29,8 +29,7 @@ class LinkedList
 
   def count
     return 0 if !@head
-    # return 2 if @head.next_node
-    # return 1 if @head 
+    whole_list.count
   end
 
   def to_string

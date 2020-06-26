@@ -40,7 +40,6 @@ class LinkedListTest < Minitest::Test
   end 
 
   def test_can_count_elements_in_list
-    skip
     assert_equal 0, @list.count
 
     @list.append("random")
@@ -55,6 +54,7 @@ class LinkedListTest < Minitest::Test
   def test_can_generate_string_from_elements
     skip
     @list.append("doop")
+    @list.append("hello")
 
     assert_equal "doop", @list.to_string
   end
