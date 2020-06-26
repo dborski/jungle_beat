@@ -83,4 +83,13 @@ class LinkedList
   def to_string
     whole_list.map { |node| node.data.to_s }.join(" ")
   end
+
+  def pop
+    current_node = @head
+    while current_node.next_node
+      current_node = current_node.next_node
+      break if !current_node.next_node.next_node
+    end 
+    current_node.next_node = nil
+  end 
 end
