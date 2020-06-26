@@ -71,6 +71,10 @@ class LinkedList
     nodes.map { |node| node.data.to_s }.join(" ") 
   end 
 
+  def includes?(data)
+    whole_list.any? { |node| node.data == data }
+  end 
+
   def count
     return 0 if !@head
     whole_list.count

@@ -113,4 +113,15 @@ class LinkedListTest < Minitest::Test
     assert_equal "blop tukow", @list.find(4, 2)
     assert_equal "deep woo shi shu blop tukow", @list.find(0, 6)
   end
+
+  def test_can_see_if_list_includes_data
+    @list.append("deep")
+    @list.append("woo")
+    @list.append("shi")
+    @list.append("shu")
+    @list.append("blop")
+
+    assert_equal true, @list.includes?("deep")
+    assert_equal false, @list.includes?("dep")
+  end
 end 
