@@ -20,9 +20,32 @@ class LinkedList
   def prepend(data)
     current_node = @head
     new_node = Node.new(data)
-    
+
     @head = new_node
     new_node.next_node = current_node
+  end 
+
+  def insert(new_index, new_data)
+    current_node = @head
+    
+    if new_index < 1
+      prepend(new_data)
+    elsif new_index == 1
+      current_node = @head
+      old_node = current_node.next_node
+      current_node.add_next_node(new_data)
+      current_node.next_node.next_node = old_node
+    else 
+      index = 1
+      while current_node.next_node
+        current_node = current_node.next_node
+        break if index == new_index - 1
+        index += 1 
+      end 
+      old_node = current_node.next_node
+      current_node.add_next_node(new_data)
+      current_node.next_node.next_node = old_node
+    end 
   end 
 
   def whole_list
