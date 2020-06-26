@@ -33,6 +33,6 @@ class LinkedList
   end
 
   def to_string
-    @head.data.to_s
+    whole_list.map { |node| node.data.to_s }.join(" ")
   end
 end

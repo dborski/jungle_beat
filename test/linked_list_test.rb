@@ -52,10 +52,9 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_can_generate_string_from_elements
-    skip
     @list.append("doop")
     @list.append("hello")
 
-    assert_equal "doop", @list.to_string
+    assert_equal "doop hello", @list.to_string
   end
 end 
