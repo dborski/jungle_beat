@@ -25,27 +25,32 @@ class LinkedList
     new_node.next_node = current_node
   end 
 
-  def insert(new_index, new_data)
+  def insert_index_one(new_index, new_data)
     current_node = @head
+    old_node = current_node.next_node
     
-    if new_index < 1
-      prepend(new_data)
-    elsif new_index == 1
-      current_node = @head
-      old_node = current_node.next_node
-      current_node.add_next_node(new_data)
-      current_node.next_node.next_node = old_node
-    else 
-      index = 1
-      while current_node.next_node
-        current_node = current_node.next_node
-        break if index == new_index - 1
-        index += 1 
-      end 
-      old_node = current_node.next_node
-      current_node.add_next_node(new_data)
-      current_node.next_node.next_node = old_node
+    current_node.add_next_node(new_data)
+    current_node.next_node.next_node = old_node
+  end 
+
+  def insert_past_index_one(new_index, new_data)
+    current_node = @head
+
+    index = 1
+    while current_node.next_node
+      current_node = current_node.next_node
+      break if index == new_index - 1
+      index += 1 
     end 
+    old_node = current_node.next_node
+    current_node.add_next_node(new_data)
+    current_node.next_node.next_node = old_node
+  end 
+
+  def insert(new_index, new_data)
+   return prepend(new_data) if new_index < 1
+   return insert_index_one(new_index, new_data) if new_index == 1
+   return insert_past_index_one(new_index, new_data)
   end 
 
   def whole_list

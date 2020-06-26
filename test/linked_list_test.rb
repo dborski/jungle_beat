@@ -68,19 +68,35 @@ class LinkedListTest < Minitest::Test
     assert_equal "bop doop hello", @list.to_string
   end
 
-  def test_can_insert_into_list
+  def test_can_insert_into_index_one
     @list.append("doop")
     @list.append("hello")
     @list.prepend("bop")
-    @list.insert(1, "woo")
-    
+
+    @list.insert_index_one(1, "woo")
     assert_equal "woo", @list.head.next_node.data
     assert_equal 4, @list.count
     assert_equal "bop woo doop hello", @list.to_string
+  end
 
-    @list.insert(2, "bebop")
+  def test_can_insert_past_index_one
+    @list.append("doop")
+    @list.append("hello")
+    @list.prepend("bop")
 
+    @list.insert_past_index_one(2, "bebop")    
+    assert_equal 4, @list.count
+    assert_equal "bop doop bebop hello", @list.to_string
+  end
+
+  def test_can_insert_into_any_index
+    @list.append("doop")
+    @list.append("hello")
+    @list.append("meep")
+    @list.prepend("bop")
+
+    @list.insert(3, "bebop")    
     assert_equal 5, @list.count
-    assert_equal "bop woo bebop doop hello", @list.to_string
+    assert_equal "bop doop hello bebop meep", @list.to_string
   end
 end 
