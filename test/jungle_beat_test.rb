@@ -32,4 +32,10 @@ class JungleBeatTest < Minitest::Test
     @jb.append("woo hoo shu")
     assert_equal 6, @jb.count
   end 
+
+  def test_play
+    @jb.append("deep doo ditt woo hoo shu")
+
+    @jb.play
+  end 
 end 
