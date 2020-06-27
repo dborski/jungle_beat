@@ -13,14 +13,14 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_head_is_nil_by_default
-    assert_equal nil, @list.head
+    assert_nil @list.head
   end
 
   def test_append_creates_node_and_adds_to_head_if_head_is_nil    
     @list.append("doop")
 
     assert_instance_of Node, @list.head
-    assert_equal nil, @list.head.next_node
+    assert_nil @list.head.next_node
   end
 
   def test_append_creates_node_and_adds_to_next_node_if_already_head
@@ -28,7 +28,7 @@ class LinkedListTest < Minitest::Test
     @list.append("deep")
 
     assert_instance_of Node, @list.head.next_node
-    assert_equal nil, @list.head.next_node.next_node
+    assert_nil @list.head.next_node.next_node
   end
 
   def test_linked_list_in_array
