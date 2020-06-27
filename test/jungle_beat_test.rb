@@ -15,7 +15,7 @@ class JungleBeatTest < Minitest::Test
 
   def test_list
     assert_instance_of LinkedList, @jb.list
-    assert_equal nil, @jb.list.head
+    assert_nil @jb.list.head
   end 
 
   def test_append 

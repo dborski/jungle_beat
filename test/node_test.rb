@@ -16,7 +16,7 @@ class NodeTest < Minitest::Test
   end
 
   def test_next_node_is_nil
-    assert_equal nil, @node.next_node
+    assert_nil @node.next_node
   end
 
   def test_can_add_new_node
