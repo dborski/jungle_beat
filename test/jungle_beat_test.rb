@@ -17,4 +17,19 @@ class JungleBeatTest < Minitest::Test
     assert_instance_of LinkedList, @jb.list
     assert_equal nil, @jb.list.head
   end 
+
+  def test_append 
+    @jb.append("deep doo ditt")
+
+    assert_equal "deep", @jb.list.head.data
+    assert_equal "doo", @jb.list.head.next_node.data
+  end 
+
+  def test_count
+    @jb.append("deep doo ditt")
+    assert_equal 3, @jb.count
+    
+    @jb.append("woo hoo shu")
+    assert_equal 6, @jb.count
+  end 
 end 
